@@ -3,6 +3,7 @@ use std::env;
 mod core {
     pub mod new_project;
     pub mod build_project;
+    pub mod run_project;
 }
 
 fn print_help() {
@@ -40,7 +41,7 @@ fn main() {
             core::build_project::build_project();
         }
         "run" => {
-            println!("Running project...");
+            core::run_project::run_project();
         }
         _ => {
             println!("Unknown command: {}", command);
