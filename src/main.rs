@@ -1,5 +1,9 @@
 use std::env;
 
+mod core {
+    pub mod new_project;
+}
+
 fn print_help() {
     println!("Nimbus - The Cirrus Package Manager");
     println!();
@@ -28,7 +32,7 @@ fn main() {
             } else {
                 let project_name = &args[2];
                 println!("Creating new project: {}", project_name);
-                
+                core::new_project::create_project(project_name).unwrap();
             }
         }
         "build" => {
